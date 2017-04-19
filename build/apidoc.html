@@ -61,12 +61,113 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.leven">module leven</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.leven.leven">
+            function <span class="apidocSignatureSpan"></span>leven
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.leven" id="apidoc.module.leven">module leven</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.leven.leven" id="apidoc.element.leven.leven">
+        function <span class="apidocSignatureSpan"></span>leven
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">leven = function (a, b) {
+	if (a === b) {
+		return 0;
+	}
+
+	var swap = a;
+
+	// Swapping the strings if `a` is longer than `b` so we know which one is the
+	// shortest &#x26; which one is the longest
+	if (a.length &#x3e; b.length) {
+		a = b;
+		b = swap;
+	}
+
+	var aLen = a.length;
+	var bLen = b.length;
+
+	if (aLen === 0) {
+		return bLen;
+	}
+
+	if (bLen === 0) {
+		return aLen;
+	}
+
+	// Performing suffix trimming:
+	// We can linearly drop suffix common to both strings since they
+	// don&#x27;t increase distance at all
+	// Note: `~-` is the bitwise way to perform a `- 1` operation
+	while (aLen &#x3e; 0 &#x26;&#x26; (a.charCodeAt(~-aLen) === b.charCodeAt(~-bLen))) {
+		aLen--;
+		bLen--;
+	}
+
+	if (aLen === 0) {
+		return bLen;
+	}
+
+	// Performing prefix trimming
+	// We can linearly drop prefix common to both strings since they
+	// don&#x27;t increase distance at all
+	var start = 0;
+
+	while (start &#x3c; aLen &#x26;&#x26; (a.charCodeAt(start) === b.charCodeAt(start))) {
+		start++;
+	}
+
+	aLen -= start;
+	bLen -= start;
+
+	if (aLen === 0) {
+		return bLen;
+	}
+
+	var bCharCode;
+	var ret;
+	var tmp;
+	var tmp2;
+	var i = 0;
+	var j = 0;
+
+	while (i &#x3c; aLen) {
+		charCodeCache[start + i] = a.charCodeAt(start + i);
+		arr[i] = ++i;
+	}
+
+	while (j &#x3c; bLen) {
+		bCharCode = b.charCodeAt(start + j);
+		tmp = j++;
+		ret = j;
+
+		for (i = 0; i &#x3c; aLen; i++) {
+			tmp2 = bCharCode === charCodeCache[start + i] ? tmp : tmp + 1;
+			tmp = arr[i];
+			ret = arr[i] = tmp &#x3e; ret ? tmp2 &#x3e; ret ? ret + 1 : tmp2 : tmp2 &#x3e; tmp ? tmp + 1 : tmp2;
+		}
+	}
+
+	return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

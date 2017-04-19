@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/sindresorhus/leven#readme"
-
-    >leven (v2.1.0)</a>
+    <a href="https://github.com/sindresorhus/leven#readme">leven (v2.1.0)</a>
 </h1>
 <h4>Measure the difference between two strings using the fastest JS implementation of the Levenshtein distance algorithm</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.leven">module leven</a><ol>
 
@@ -93,8 +86,8 @@
 	var swap = a;
 
 	// Swapping the strings if `a` is longer than `b` so we know which one is the
-	// shortest &#x26; which one is the longest
-	if (a.length &#x3e; b.length) {
+	// shortest &amp; which one is the longest
+	if (a.length &gt; b.length) {
 		a = b;
 		b = swap;
 	}
@@ -112,9 +105,9 @@
 
 	// Performing suffix trimming:
 	// We can linearly drop suffix common to both strings since they
-	// don&#x27;t increase distance at all
+	// don't increase distance at all
 	// Note: `~-` is the bitwise way to perform a `- 1` operation
-	while (aLen &#x3e; 0 &#x26;&#x26; (a.charCodeAt(~-aLen) === b.charCodeAt(~-bLen))) {
+	while (aLen &gt; 0 &amp;&amp; (a.charCodeAt(~-aLen) === b.charCodeAt(~-bLen))) {
 		aLen--;
 		bLen--;
 	}
@@ -125,10 +118,10 @@
 
 	// Performing prefix trimming
 	// We can linearly drop prefix common to both strings since they
-	// don&#x27;t increase distance at all
+	// don't increase distance at all
 	var start = 0;
 
-	while (start &#x3c; aLen &#x26;&#x26; (a.charCodeAt(start) === b.charCodeAt(start))) {
+	while (start &lt; aLen &amp;&amp; (a.charCodeAt(start) === b.charCodeAt(start))) {
 		start++;
 	}
 
@@ -146,20 +139,20 @@
 	var i = 0;
 	var j = 0;
 
-	while (i &#x3c; aLen) {
+	while (i &lt; aLen) {
 		charCodeCache[start + i] = a.charCodeAt(start + i);
 		arr[i] = ++i;
 	}
 
-	while (j &#x3c; bLen) {
+	while (j &lt; bLen) {
 		bCharCode = b.charCodeAt(start + j);
 		tmp = j++;
 		ret = j;
 
-		for (i = 0; i &#x3c; aLen; i++) {
+		for (i = 0; i &lt; aLen; i++) {
 			tmp2 = bCharCode === charCodeCache[start + i] ? tmp : tmp + 1;
 			tmp = arr[i];
-			ret = arr[i] = tmp &#x3e; ret ? tmp2 &#x3e; ret ? ret + 1 : tmp2 : tmp2 &#x3e; tmp ? tmp + 1 : tmp2;
+			ret = arr[i] = tmp &gt; ret ? tmp2 &gt; ret ? ret + 1 : tmp2 : tmp2 &gt; tmp ? tmp + 1 : tmp2;
 		}
 	}
 
@@ -177,3 +170,4 @@
     ]
 </div>
 </div>
+</body></html>
