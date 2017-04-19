@@ -1,9 +1,14 @@
-# api documentation for  [leven (v2.1.0)](https://github.com/sindresorhus/leven#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-leven.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-leven) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-leven.svg)](https://travis-ci.org/npmdoc/node-npmdoc-leven)
+# npmdoc-leven
+
+#### api documentation for  [leven (v2.1.0)](https://github.com/sindresorhus/leven#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-leven.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-leven) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-leven.svg)](https://travis-ci.org/npmdoc/node-npmdoc-leven)
+
 #### Measure the difference between two strings using the fastest JS implementation of the Levenshtein distance algorithm
 
-[![NPM](https://nodei.co/npm/leven.png?downloads=true)](https://www.npmjs.com/package/leven)
+[![NPM](https://nodei.co/npm/leven.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/leven)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-leven/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-leven_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-leven/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-leven/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-leven/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-leven/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-leven/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-leven/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "Sindre Sorhus",
-        "email": "sindresorhus@gmail.com",
         "url": "sindresorhus.com"
     },
     "bugs": {
@@ -75,13 +79,11 @@
     "license": "MIT",
     "maintainers": [
         {
-            "name": "sindresorhus",
-            "email": "sindresorhus@gmail.com"
+            "name": "sindresorhus"
         }
     ],
     "name": "leven",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/sindresorhus/leven.git"
@@ -93,16 +95,6 @@
     "version": "2.1.0"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module leven](#apidoc.module.leven)
-
-
-
-# <a name="apidoc.module.leven"></a>[module leven](#apidoc.module.leven)
 
 
 
